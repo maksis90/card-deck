@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
+
+html, body, #app {
+  height: 100%;
+  background: ghostwhite;
+}
+
+.red{
+  color: #FF0000;
+}
+
+.black{
+  color: #000;
+}
+
+.deck {
+  margin-left: 30px;
+  padding-top: 30px;
+}
+
+.card {
+  width: 108px;
+  height: 160px;
+  float: left;
+  margin: 5px;
+  border-radius: 5px;
+  perspective: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .5s ease-in;
+  transition-property: transform, background;
+
+
+  &> * {
+    height: 160px;
+    width: 108px;
+    @include pos($t:0, $l:0);
+    transform-style: preserve-3d;
+    transition: .4s ease-in;
+    -webkit-transition-property: background, transform;
+    -moz-transition-property: background, transform;
+    -ms-transition-property: background, transform;
+    -o-transition-property: background, transform;
+    transition-property: background, transform;
+  }
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
+
+
+  &__shirt {
+    min-width: 100%;
+    height: 160px;
+  }
+
+
+  &__number {
+    width: 100%;
+    display: block;
+    font-size: 1.5rem;
+    padding: 7px;
+
+    &--top {
+      text-align: left;
+    }
+
+    &--bottom {
+      position: absolute;
+      bottom: 0px;
+      text-align: left;
+      transform: rotate(180deg);
+    }
+  }
+
+    &__suit {
+      width: 100%;
+      position: absolute;
+      top: 38%;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    &__front {
+      transform: rotateY(-180deg) translateZ(0);
+
+    }
+
+  &__back {
+      z-index: 1;
+      background: url("../images/shirt.png") no-repeat top center;
+
+  }
+
+}
+
+

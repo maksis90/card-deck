@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Starter">
+	<meta name="author" content="Maksym">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<title>Cards</title>
+
+	<link rel="icon" href="images/favicon.png">
+
+	<!--build:css css/styles.min.css-->
+	<link rel="stylesheet" href="css/libs/bootstrap.min.css">
+	<link rel="stylesheet" href="css/global.min.css">
+	<!--endbuild-->
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="app">
+		<div class="deck">
+
+			<div v-for="card in cards" :key="card.id"
+				 class="card"
+				 :class="suitColor[card.suit]">
+
+				<div class="card__front">
+				<span class="card__number card__number--top">{{ card.rank }}</span>
+				<span class="card__suit">{{ card.suit }} </span>
+				<span class="card__number card__number--bottom">{{ card.rank }}</span>
+				</div>
+				<div class="card__back">
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!--build:js js/main.min.js -->
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/bootstrap.bundle.min.js"></script>
+	<script src="js/libs/vue.min.js"></script>
+	<script src="js/main.js"></script>
+	<!--endbuild-->
+</body>
+</html>
